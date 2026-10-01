@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+/* Design tokens: Tailwind v4 turns these into utilities like bg-surface */
+@theme {
+  --font-display: "Archivo", "Arial Black", sans-serif;
+  --font-body: "Satoshi", system-ui, sans-serif;
+  --color-surface: #f2f0f1;
+  --color-card: #f0eeed;
+  --color-sale: #ff3333;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    color: #000;
+  }
+}
+
+/* Reusable heading style for every section title on the page */
+@utility heading-display {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-stretch: 125%;
+  text-transform: uppercase;
+  line-height: 1;
+}
