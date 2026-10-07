@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Design tokens: Tailwind v4 turns these into utilities like bg-surface */
 @theme {
   --font-display: "Archivo", "Arial Black", sans-serif;
   --font-body: "Satoshi", system-ui, sans-serif;
@@ -16,11 +15,52 @@
   }
 }
 
-/* Reusable heading style for every section title on the page */
 @utility heading-display {
   font-family: var(--font-display);
   font-weight: 900;
   font-stretch: 125%;
   text-transform: uppercase;
   line-height: 1;
+}
+
+/* ---- dual-thumb price slider (category page) ---------------------------- */
+.range-thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: transparent;
+  pointer-events: none; /* let both inputs share the same track */
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.range-thumb::-webkit-slider-thumb {
+  pointer-events: auto;
+  appearance: none;
+  -webkit-appearance: none;
+  height: 18px;
+  width: 18px;
+  border-radius: 9999px;
+  background: #000;
+  cursor: pointer;
+}
+
+.range-thumb::-moz-range-thumb {
+  pointer-events: auto;
+  height: 18px;
+  width: 18px;
+  border: 0;
+  border-radius: 9999px;
+  background: #000;
+  cursor: pointer;
+}
+
+.range-thumb::-webkit-slider-runnable-track {
+  background: transparent;
+}
+
+.range-thumb::-moz-range-track {
+  background: transparent;
 }

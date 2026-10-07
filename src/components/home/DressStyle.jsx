@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import casual from "../../assets/casual.png";
 import formal from "../../assets/formal.png";
 import party from "../../assets/party.png";
@@ -24,6 +25,11 @@ const DressStyle = () => {
               key={style.name}
               className={`relative h-48 overflow-hidden rounded-[20px] bg-white md:h-56 lg:h-[289px] ${style.span}`}
             >
+              <Link
+                to={`/category?style=${style.name}`}
+                aria-label={`Browse ${style.name}`}
+                className="absolute inset-0 z-20"
+              />
               <img
                 src={style.image}
                 alt=""

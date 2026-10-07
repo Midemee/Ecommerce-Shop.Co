@@ -11,7 +11,24 @@ export const productsApi = createApi({
     getSingleProduct: builder.query({
       query: (id) => `/products/${id}`,
     }),
+
+    // NEW: the whole catalogue in one request (limit=0 => no limit).
+    // The category page filters / sorts / paginates this list on the client.
+    getCatalog: builder.query({
+      query: () => "/products?limit=0",
+      transformResponse: (response) => response.products,
+    }),
+
+    // NEW: [{ slug, name, url }, ...]
+    getCategories: builder.query({
+      query: () => "/products/categories",
+    }),
   }),
 });
 
-export const { useGetAllProductsQuery, useGetSingleProductQuery } = productsApi;
+export const {
+  useGetAllProductsQuery,
+  useGetSingleProductQuery,
+  useGetCatalogQuery,
+  useGetCategoriesQuery,
+} = productsApi;

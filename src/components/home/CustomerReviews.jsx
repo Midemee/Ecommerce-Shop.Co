@@ -33,7 +33,7 @@ const CustomerReviews = () => {
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-20 md:px-8">
-      {/* Heading */}
+
       <div className="mb-10 flex items-center justify-between">
         <h2 className="text-4xl font-extrabold uppercase md:text-5xl">
           Our Happy Customers
@@ -56,21 +56,18 @@ const CustomerReviews = () => {
         </div>
       </div>
 
-      {/* Reviews */}
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         {reviews.map((review) => (
           <article
             key={review.id}
             className="rounded-[20px] border border-gray-200 p-6"
           >
-            {/* Stars */}
             <img
               src={stars}           
               alt="5 star rating"
               className="h-auto w-[110px]"
             />
 
-            {/* Customer name */}
             <div className="mt-4 flex items-center gap-2">
               <h3 className="text-lg font-bold">
                 {review.name}
@@ -81,12 +78,10 @@ const CustomerReviews = () => {
               </span>
             </div>
 
-            {/* Review */}
             <p className="mt-3 text-sm leading-6 text-gray-600">
               "{review.review}"
             </p>
 
-            {/* Date */}
             <p className="mt-5 text-sm text-gray-400">
               {review.date}
             </p>

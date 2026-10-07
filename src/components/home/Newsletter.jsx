@@ -7,13 +7,12 @@ const Newsletter = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // No backend to send this to yet — just acknowledge it for now
     setSubmitted(true);
   };
 
   return (
-    <section className="mx-auto max-w-7xl px-4 md:px-8">
-      <div className="flex flex-col items-start gap-6 rounded-[20px] bg-black px-6 py-10 md:flex-row md:items-center md:justify-between md:gap-10 md:px-16 md:py-12">
+  <section className="w-full">
+  <div className="flex flex-col items-start gap-6 rounded-[20px] bg-black px-6 py-10 md:flex-row md:items-center md:justify-between md:gap-10 md:px-16 md:py-12">
         <h2 className="heading-display max-w-sm text-2xl text-white md:text-4xl">
           Stay upto date about our latest offers
         </h2>
